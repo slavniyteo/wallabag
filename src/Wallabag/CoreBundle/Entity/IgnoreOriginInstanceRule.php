@@ -30,7 +30,7 @@ class IgnoreOriginInstanceRule implements IgnoreOriginRuleInterface, RuleInterfa
      * @Assert\NotBlank()
      * @Assert\Length(max=255)
      * @RulerZAssert\ValidRule(
-     *  allowed_variables={"host","pattern"},
+     *  allowed_variables={"host","_all"},
      *  allowed_operators={"=","~"}
      * )
      * @ORM\Column(name="rule", type="string", nullable=false)
