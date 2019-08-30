@@ -5,6 +5,7 @@ namespace Wallabag\CoreBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,6 +18,11 @@ class EditEntryType extends AbstractType
             ->add('title', TextType::class, [
                 'required' => true,
                 'label' => 'entry.edit.title_label',
+            ])
+            ->add('title', TextareaType::class, [
+                'required' => true,
+                'label' => 'Content',
+                'attr' => [ 'style="height: 20em; padding: 10px;"' ]
             ])
             ->add('url', UrlType::class, [
                 'disabled' => true,
